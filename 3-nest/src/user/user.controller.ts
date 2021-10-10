@@ -10,41 +10,45 @@ export class UserController {
   }
 
   @Delete('/:id')
-  deleteUser(@Param("id") id:string) {
+  deleteUser(@Param("id") id:number) {
     return this.userService.deleteUser(id);
   }
 
   @Get('/:id')
-  getOne(@Param("id") id:string) {
-    return this.userService.getOne(id);
+  getOne(@Param("id") id:number) {
+    return this.userService.getUser(id);
   }
 
-
-  @Put('/:id')
-  replaceValuePut(@Param("id") id:string, @Body() body: any) {
-    return this.userService.replaceValuePut(id,body);
+  @Put('/replaceUser/:id')
+  replaceUser(@Param("id") id:number, @Body() body: any) {
+    return this.userService.replaceUser(id,body);
   }
-
 
   @Post('/register')
-  register(@Body() body: any) {
-    return this.userService.register(body);
+  registerUser(@Body() body: any) {
+    return this.userService.registerUser(body);
   }
 
-
-  @Patch("/:id")
- replaceValuePatch(@Body() body:any, @Param("id") id:string){
-    return this.userService.replaceValuePatch(body,id);
+  @Patch("/replaceUser/:id")
+  register(@Body() body:any, @Param("id") id:number){
+    return this.userService.replaceUser(id,body);
   }
 
   @Post("/login")
-  login(@Body("email") email:string , @Body("password") password:string){
-      return this.userService.login(email,password);
+  loginUser(@Body("email") email:string , @Body("password") password:string){
+      return this.userService.loginUser(email,password);
   }
 
   @Get('/search/:id')
-  searchUser(@Param("id")id:string){
+  searchUser(@Param("id")id:number){
     return this.userService.searchUser(id);
   }
+
+  @Get('/logUser')
+  logUser() {
+    return this.userService.logAllUser();
+    // return;
+  }
+  //@Get('/user/:all')
   
 }
