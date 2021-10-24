@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(85deg, rgba(2, 0, 36, 1) 0%, rgba(9, 15, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    font-family: 'Montserrat', sans-serif;
+}
