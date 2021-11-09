@@ -1,4 +1,5 @@
 <div class="mainContent">
+    <h5 id="invalid" *ngIf="error!=''">{{error}}</h5>
     <div class="login">
         <div class="inputs">
             <label for="EMAIL">Email</label>
@@ -6,14 +7,10 @@
             <label for="PASSWORD">Password</label>
             <input type="password" name="PASSWORD" [formControl]="fcPassword" />
         </div>
-        <p>{{requestResult | json}}</p>
-        <!-- <div>
-        {{ fcEmail.value }}
-        {{ fcPassword.value }}
-      </div> -->
         <div class="actions">
             <button (click)="login()">LOGIN</button>
-            <button (click)="nav('register')">REGISTER</button>
         </div>
+        <h5 (click)="nav('register')">No account yet? Create an account</h5>
     </div>
+
 </div>

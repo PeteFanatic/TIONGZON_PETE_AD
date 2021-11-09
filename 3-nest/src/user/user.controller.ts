@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Put,
+} from '@nestjs/common';
+
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -9,10 +19,10 @@ export class UserController {
     return this.userService.register(body);
   }
 
-  @Post("/login")
-    login(@Body() login: any){
-        return this.userService.login(login);
-    }
+  @Post('/login')
+  login(@Body('email') email: string, @Body('password') password: string) {
+    return this.userService.login(email, password);
+  }
 
   @Get('/all')
   getAllUser() {
@@ -32,11 +42,17 @@ export class UserController {
   replaceValuePut(@Param('id') id: string, @Body() body: any) {
     return this.userService.replaceValuePut(id, body);
   }
+  @Patch('/reset')
+  resetDatabase() {
+    return this.userService.resetDatabase();
+  }
 
   @Patch('/:id')
   replaceValuePatch(@Param('id') id: string, @Body() body: any) {
     return this.userService.replaceValuePatch(id, body);
   }
+
+
 
   @Delete('/:id')
   deleteUser(@Param('id') id: string) {

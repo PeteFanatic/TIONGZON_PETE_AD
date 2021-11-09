@@ -1,0 +1,195 @@
+.userMain {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: -150px;
+    align-content: center;
+    justify-content: center;
+    button {
+        text-align: center;
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 400;
+    }
+}
+
+table {
+    margin-top: 30px;
+    width: fit-content;
+    height: 60%;
+    overflow-y: scroll;
+    //box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px;
+    background: white;
+    min-width: 80vw;
+    //text-align: left;
+    tr {
+        padding: 16px;
+    }
+    td {
+        text-align: center;
+        outline: 2px #405cf5 solid;
+        padding: 8px;
+        fa-icon {
+            padding-right: 12px;
+            cursor: pointer;
+        }
+    }
+    th {
+        border-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: normal;
+        color: #405cf5;
+    }
+}
+
+h3 {
+    //Users
+    //float: right;
+    //margin-left: 100px;
+    text-align: left;
+    font-size: 40px;
+    font-weight: normal;
+    color: #405cf5;
+}
+
+.reset {
+    padding-left: 12px;
+    padding-top: 70px;
+}
+
+.headsearch {
+    padding: 45px;
+    // background-color: grey;
+    // border-top-left-radius: 10px;
+    // border-top-right-radius: 10px;
+}
+
+.reset button {
+    background: #405cf5;
+    //box-sizing: border-box;
+    // border-left-color: #000;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+    display: block;
+    //float: left;
+    font-family: Poppins, arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    height: 60px;
+    line-height: 40px;
+    margin: auto;
+    position: relative;
+    //text-shadow: 0 -1px 0 #000;
+    width: 200px;
+}
+
+
+/*-------------------------------------*/
+
+.searchBar {
+    // position: center;
+    // text-align: center;
+    margin-left: -45px;
+    width: 700px;
+    padding-bottom: 20px;
+}
+
+// .webdesigntuts-workshop:before,
+// .webdesigntuts-workshop:after {
+//     // content: '';
+//     // display: block;
+//     // height: 1px;
+//     // left: 50%;
+//     // margin: 0 0 0 -400px;
+//     // position: absolute;
+//     // width: 800px;
+// }
+// .searchBar:before {
+//     background: #fff;
+//     top: 192px;
+// }
+// .searchBar:after {
+//     background: #fff;
+//     top: 191px;
+// }
+.searchBar form {
+    background: #FFF;
+    border: 3px solid #405cf5;
+    border-radius: 5px;
+    //box-shadow: inset 0 0 0 1px #272727;
+    //display: inline-block;
+    font-size: 0px;
+    margin: 150px auto 0;
+    //padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.searchBar input {
+    background: #fff;
+    border: 3px solid #405cf5;
+    border-radius: 5px;
+    //box-shadow: 0 2px 0 #000;
+    //color: #888;
+    //display: block;
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+    height: 50px;
+    margin: 0;
+    padding: 0 10px;
+    //text-shadow: 0 -1px 0 #000;
+    width: 300px;
+}
+
+.ie .searchBar input {
+    line-height: 40px;
+}
+
+// .searchBar input::-webkit-input-placeholder {
+//     color: #888;
+// }
+.searchBar input:focus {
+    //animation: glow 800ms ease-out infinite alternate;
+    background: #fff;
+    border-color: #405cf5;
+    //box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px rgba(0, 255, 0, .1), 0 2px 0 #000;
+    color: #000;
+    outline: none;
+}
+
+.searchBar button {
+    background: #405cf5;
+    //box-sizing: border-box;
+    //border: 1px solid #444;
+    border-radius: 5px;
+    //box-shadow: 0 2px 0 #000;
+    color: #fff;
+    //display: block;
+    float: left;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 50px;
+    //line-height: 40px;
+    margin-left: 20px;
+    //padding: 0;
+    position: relative;
+    //text-shadow: 0 -1px 0 #000;
+    width: 100px;
+}
+
+// .webdesigntuts-workshop button:hover,
+// .webdesigntuts-workshop button:focus {
+//     background: #292929;
+//     background: linear-gradient(#393939, #292929);
+//     color: darkorange;
+//     outline: none;
+// }
+// .webdesigntuts-workshop button:active {
+//     background: #292929;
+//     background: linear-gradient(#393939, #292929);
+//     box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+//     top: 1px;
+// }

@@ -33,16 +33,15 @@ export class Helper {
       });
       return result;
     } catch (error) {
-      console.log("Helper.populate error");
-      console.log(error.message);
-      return null;
+      console.log(error);
+      return result;
     }
   }
 
-  static validBody(body: any): { valid: boolean; data: string } {
+  static validBody(body: any): { valid: boolean; data?: string | null } {
     try {
-    //   var keys: Array<string> = Helper.describeClass(User);
-    var keys: Array<string> = ['name', 'age', 'email', 'password'];
+      //   var keys: Array<string> = Helper.describeClass(User);
+      var keys: Array<string> = ['name', 'age', 'email', 'password'];
       var types: Map<string, string> = new Map<string, string>();
       types.set('name', typeof '');
       types.set('age', typeof 0);
@@ -56,35 +55,37 @@ export class Helper {
           throw new Error(
             `${key} with value ${body[key]} with type ${typeof body[
               key
-            ]} is not a valid entry, expecting ${key}:${types.get(key)}`,
+            ]} is not a valid entry, expecting ${key}:${types.get(key)}`
           );
         }
       }
       return { valid: true, data: null };
     } catch (error) {
-      return { valid: false, data: error.message, };
+      if (error instanceof Error) return { valid: false, data: error.message };
+      else return { valid: false, data: 'unknown error' };
     }
   }
 
-  static validBodyPut(body: any): { valid: boolean; data: string } {
+  static validBodyPut(body: any): { valid: boolean; data?: string | null } {
     try {
-      var bodyValidation: { valid: boolean; data: string } =
+      var bodyValidation: { valid: boolean; data?: string | null } =
         this.validBody(body);
       if (bodyValidation.valid) {
         var keys: Array<string> = Helper.describeClass(User);
-        keys = Helper.removeItemOnce(keys, "id");
+        keys = Helper.removeItemOnce(keys, 'id');
         for (const key of Object.keys(body)) {
           if (keys.includes(`${key}`)) {
             keys = Helper.removeItemOnce(keys, key);
           }
         }
         if (keys.length > 0) {
-          throw new Error(`Payload is missing ${keys}`);
+          throw Error(`Payload is missing ${keys}`);
         }
         return { valid: true, data: null };
-      } else throw new Error(bodyValidation.data);
+      } else throw Error(`{bodyValidation.data}`);
     } catch (error) {
-      return { valid: false, data: error.message, };
+      if (error instanceof Error) return { valid: false, data: error.message };
+      else return { valid: false, data: 'unknown error' };
     }
   }
 }
